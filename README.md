@@ -1,47 +1,38 @@
-# Hacker News - Front Page
+# Hacker Times - Hacker News as a newspaper front page
 
-Let's explore if we can make self-contained HTML page with the
-necessary Javascript included to make a cool Newspaper Front Page
-out of the 10 (currently) top news over at Hacker News ( https://news.ycombinator.com/news ).
+Hacker Times is a single-page web app that shows the top stories from
+[Hacker News](https://news.ycombinator.com) laid out like a newspaper front page.
+The most upvoted story gets the biggest headline.
 
-A real newspaper usually consists of the following:
+## Features
 
-The Header Area
+- **Newspaper layout:** masthead, lead story banner, secondary headlines, columns, and a sidebar.
+- **Teasers:** the first paragraph of each story (up to 200 characters).
+- **Photos:** screenshots of the top 3 linked articles.
+- **Comments:** open a story's comments in a modal.
+- **Info box:** front-page stats, top linked domains, and the most-starred GitHub repositories from the last week.
 
-• Masthead (or Nameplate): The large, distinctive title of the newspaper printed at the top of the front page (e.g., The New York Times).
-• Dateline / Folio: The line right below or near the masthead that contains the publication date, volume number, and price.
-• Ears: The small corners on either side of the masthead often used for weather forecasts, edition names, or small advertisements.
+## Running it
 
-Main Content & Layout Blocks
+Open `index.html` in a browser. An internet connection is required.
 
-• Lead Story: The most important news article of the day, typically placed at the top right of the page with the largest headline.
-• Columns: The vertical layout zones that split the text to make it readable. Newspaper pages are traditionally divided into 6 columns.
-• Fold: The physical crease where the paper is folded in half. The most critical, attention-grabbing content is kept "above the fold" to be visible on newsstands.
-• Sidebar: A shorter, self-contained article placed next to a major story, providing closely related background information or a human-interest angle.
+No build step or install is needed.
 
-Visual Elements
+## Data sources
 
-• Banner Headline (or Streamer): A massive headline that stretches all the way across the top of the front page, reserved for major breaking news.
-• Teasers (or Skyboxes): Strips or promotional boxes at the very top of the page (often above the masthead) that preview exciting stories found inside the paper.
-• Photo / Graphic Block: The prominent visual focal point of the page, usually tied to the lead story.
-• Caption (or Cutline): The explanatory text directly underneath or beside a photograph.
+- Hacker News API (`hacker-news.firebaseio.com`): stories and comments.
+- [Jina Reader](https://r.jina.ai): article text for teasers on linked stories.
+- [thum.io](https://image.thum.io): screenshots for the top 3 linked articles.
+- GitHub Search API: most-starred repositories this week.
 
-Small Structural Anchors
+The Jina Reader and thum.io services are third parties. Their limits and terms apply.
 
-• Credit Line: A small line of text giving credit to the photographer or news agency (like AP or Reuters) for an image.
-• Byline: The line at the beginning of an article that gives the writer's name.
-• Jump Line: A directional line at the bottom of a front-page article instructing the reader where to continue reading (e.g., "Continued on Page A4").
-• Index: A small directory table, usually near the bottom, listing where to find specific sections inside (e.g., Sports, Business, Obituaries).
+## Deployment
 
-Let's create something similar but using the news as presented via the hacker news API,
-where the most upvoted news currently makes the biggest headlines.
+A GitHub Actions workflow (`.github/workflows/deploy-pages.yml`) publishes
+`index.html` to GitHub Pages on every push to `main`.
 
-Each news piece shown should show some text (truncated) with small icons that either opens up
-a new browser tab with the original article, or pop-up a window with the comments made for that article.
+## License
 
-
-
-
-## Usage
-
-To run this app: Open `index.html` in a browser. Note that it needs internet access to fetch the Hacker News data from the internet.
+This project is licensed under the Mozilla Public License 2.0 (MPL-2.0).
+See [LICENSE](LICENSE) for the full text.
