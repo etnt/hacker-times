@@ -4,6 +4,8 @@ Hacker Times is a single-page web app that shows the top stories from
 [Hacker News](https://news.ycombinator.com) laid out like a newspaper front page.
 The most upvoted story gets the biggest headline.
 
+Read it [here](https://etnt.github.io/hacker-times/)
+
 ## Features
 
 - **Newspaper layout:** masthead, lead story banner, secondary headlines, columns, and a sidebar.
